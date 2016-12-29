@@ -8,7 +8,7 @@
     <div class = "row">
         <h3>Sign Up</h3>
         <div class = "col-md-6">
-            <form action = "#" method = "post">
+            <form action = "{{ route('signup') }}" method = "post">
                 <div class = "form-group">
                     <label for = "email">Your E-Mail</label>
                     <input class ="form-control" type="text" name="email" id="email">
@@ -21,7 +21,8 @@
                     <label for = "password">Your Password</label>
                     <input class ="form-control" type="password" name="password" id="password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>       
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <input type="hidden" name="_token" value="{{ Session::token() }}">       
             </form>         
         </div>
         <div class = "col-md-6">
