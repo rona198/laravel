@@ -29,6 +29,11 @@ Route::group(['middleware' => ['web']], function (){
 	Route::get('/dashboard', [
 		'uses' => 'UserController@getDashboard',
 		'as' => 'dashboard',
-		'middleware' => 'auth',
+		'routemiddleware' => 'auth',
 	]);
+
+	Route::post('/createpost', [
+		'uses' => 'PostController@postCreatePost',
+    	'as' => 'post.create'
+    ]);
 });
