@@ -1,9 +1,11 @@
 <?php
 namespace App\Http\Controllers;
+
 use App\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Like;
+
 class PostController extends Controller
 {
 	public function getDashBoard()
@@ -13,7 +15,6 @@ class PostController extends Controller
 	}
 	public function postCreatePost(Request $request)
 	{
-		//validation
 		$this->validate($request, [
 			'body' => 'required|max:1000'
 		]);
