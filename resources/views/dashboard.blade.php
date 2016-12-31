@@ -14,7 +14,6 @@
 			</form>
 		</div>
 	</section>
-
 	<section class = "row posts">
 		<div class = "col-md-6 col-md-offset-3">
 			<header><h3>What other people say...</h3></header>
