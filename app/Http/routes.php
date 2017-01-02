@@ -41,6 +41,11 @@ Route::group(['middleware' => ['web']], function (){
 		'as' => 'account.save'
 	]);
 
+	Route::get('/userimage/{filename}',[
+		'uses' => 'UserController@postUserImage',
+		'as' => 'account.image'
+	]);
+
 	Route::get('/dashboard', [
 		'uses' => 'UserController@getDashboard',
 		'as' => 'dashboard',
