@@ -62,7 +62,7 @@ return [
             'bucket' => 'your-bucket',
         ],
 
-        'rackspace' => [
+       'rackspace' => [
             'driver' => 'rackspace',
             'username' => 'your-username',
             'key' => 'your-key',

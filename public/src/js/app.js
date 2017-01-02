@@ -21,4 +21,23 @@ $('modal-save').on('click', function(){
 		$(postBodyElement).text(msg['new_body']);
 		$('#edit-modal').mode('hide');
 	});
+
+	$('.like').on('click', function(event){
+	event.preventDefault();
+	postId = event.target.parentNode.parentNode.dataset['postId'];
+	var isLike = event.target.previousElementSibling == null;
+	console.log(isLike);
+	$.ajax({
+		methods: 'POST',
+		url: urlLike,
+		data: {isLike, postId: postId, _token: token}
+	})
+		.done(function(){
+			event.target.innerText = isLike ? event.target.innerText == 'Like' ? 'You like this post' : 'Like' : event.target.innerText == 'Dislike' ? 'You don\'t like this post' : 'Dislike';
+			if (isLike) {
+				event.target.nextElementSibling.innerText = 'Dislike';				
+			} else {
+				event.target.previousElementSibling.innerText = 'Like';	
+}
+		});
 });
