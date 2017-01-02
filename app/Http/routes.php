@@ -31,6 +31,16 @@ Route::group(['middleware' => ['web']], function (){
 		'as' => 'logout'
 	]);
 
+	Route::get('/account', [
+		'uses' => 'UserController@getAccount',
+		'as' => 'account'
+	]);
+	 
+	Route::post('/updateaccount',[
+		'uses' => 'UserController@postSaveAccount',
+		'as' => 'account.save'
+	]);
+
 	Route::get('/dashboard', [
 		'uses' => 'UserController@getDashboard',
 		'as' => 'dashboard',
