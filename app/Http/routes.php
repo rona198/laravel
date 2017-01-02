@@ -26,15 +26,21 @@ Route::group(['middleware' => ['web']], function (){
     	 'as' => 'signin'   
 	]); 
 
+	Route::get('/logout', [
+		'uses' => 'UserController@getLogout',
+		'as' => 'logout'
+	]);
+
 	Route::get('/dashboard', [
 		'uses' => 'UserController@getDashboard',
 		'as' => 'dashboard',
-		'routemiddleware' => 'auth',
+		'middleware' => 'auth',
 	]);
 
 	Route::post('/createpost', [
 		'uses' => 'PostController@postCreatePost',
     	'as' => 'post.create'
+    	'middleware' => 'auth'
     ]);
 
     Route::get('/delete-post/{post_id}', [
@@ -43,12 +49,8 @@ Route::group(['middleware' => ['web']], function (){
 		'middleware' => 'auth'
 	]);
 
-	Route::post('/edit', function{\Illuminate\Http\Request $request) {
-		return response()->json(['message' => $request['postId']]);
-		/*
-		{
-			message: '$request['body']'
-		}		
-		*/
-	});->name('edit');
+	Route::post('/edit', [
+		'uses' => 'PostController@postEditPost',
+		'as' => 'edit'
+	]);
 });
