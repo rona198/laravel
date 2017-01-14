@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master1')
 
 @section('title')
     Welcome! 
@@ -17,6 +17,14 @@
                 <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
                     <label for="first_name">First Name</label>
                     <input class="form-control" type="text" name="first_name" id="first_name" value="{{ Request::old('first_name') }}">
+                </div>
+                <div class="form-group {{ $errors->has('last_name') ? 'has-error' : '' }}">
+                    <label for="last_name">Last Name</label>
+                    <input class="form-control" type="text" name="last_name" id="last_name" value="{{ Request::old('last_name') }}">
+                </div>
+                <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
+                    <label for="phone">Phone Number</label>
+                    <input class="form-control" type="text" name="phone" id="phone" value="{{ Request::old('phone') }}">
                 </div>
                 <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                     <label for="password">Password</label>

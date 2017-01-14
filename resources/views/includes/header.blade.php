@@ -1,5 +1,5 @@
 <header>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="background-color: black; font-family: 'Colonna MT'; font-size: 20px;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ route('dashboard') }}">Brand</a>
+      <a class="navbar-brand" href="{{ route('dashboard') }}" style ="font-size: 35px;">Post It</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,5 +20,5 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>	
+</nav>  
 </header>
